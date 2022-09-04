@@ -23,7 +23,7 @@ function checkUnique () {
 
 function usernameMinLength () {
     let username = document.getElementById("username").value;
-    if (username.length() < 4) {
+    if (username.length < 4) {
         document.getElementById("shortUsername").style.display = "block";
     }
     else {
@@ -33,7 +33,7 @@ function usernameMinLength () {
 
 function passwordMinLength () {
     let password = document.getElementById("password").value;
-    if (password.length() < 4) {
+    if (password.length < 4) {
         document.getElementById("shortPassword").style.display = "block";
     }
     else {

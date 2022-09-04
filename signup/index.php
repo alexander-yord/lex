@@ -79,7 +79,7 @@
                 Username must be at least 4 characters! <br>
             </label>                      
             <label for = "password">Password:</label><br>
-            <input id = "password" type = "password" name = "password" required minlength="4" maxlength = "16"><br>
+            <input id = "password" type = "password" name = "password" onkeyup="passwordMinLength()" required minlength="4" maxlength = "16"><br>
             <label id = "shortPassword" style = "color: red; display: none">
                 Password must be at least 4 characters! <br>
             </label>  
