@@ -1,4 +1,5 @@
-function checkUnique () {
+function usernameValidate() {
+    //checks that username is unique
     let username = document.getElementById("username").value;
     
     if (username.length == 0) { 
@@ -19,10 +20,8 @@ function checkUnique () {
     xmlhttp.open("GET", "uniqueness.php?q=" + username);
     xmlhttp.send();
     }
-}
 
-function usernameMinLength () {
-    let username = document.getElementById("username").value;
+    //checks for min length
     if (username.length < 4) {
         document.getElementById("shortUsername").style.display = "block";
     }

@@ -71,7 +71,7 @@
             <label for = "l_name">Last Name:</label><br>
             <input id = "l_name" type = "text" name = "l_name" required maxlength="12"><br>
             <label for = "username">Username:</label><br>
-            <input id = "username" type = "text" name = "username" onkeydown="checkUnique()" onkeyup="usernameMinLength ()" required minlength="4" maxlength = "16"> <br>
+            <input id = "username" type = "text" name = "username" onkeydown="usernameValidate()" required minlength="4" maxlength = "16"> <br>
             <label id = "notUnique" style = "color: red; display: none">
                 This username is taken! <br>
             </label>
