@@ -40,7 +40,7 @@
                 FROM login_credentials lc 
                 LEFT JOIN accounts ac 
                 ON lc.account_id = ac.account_id 
-                WHERE lower(username) = lower('$u_username')";
+                WHERE lower(username) = lower('$u_name')";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
 	
@@ -71,7 +71,7 @@
             <label for = "l_name">Last Name:</label><br>
             <input id = "l_name" type = "text" name = "l_name" required maxlength="12"><br>
             <label for = "username">Username:</label><br>
-            <input id = "username" type = "text" name = "username" onkeydown="usernameValidate()" required minlength="4" maxlength = "16"> <br>
+            <input id = "username" type = "text" name = "username" onkeyup="usernameValidate()" required minlength="4" maxlength = "16"> <br>
             <label id = "notUnique" style = "color: red; display: none">
                 This username is taken! <br>
             </label>
