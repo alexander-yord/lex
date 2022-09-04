@@ -21,20 +21,25 @@ function checkUnique () {
     }
 }
 
-/*function checkusername() {
-    let username = document.getElementById("username").value
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "uniqueness.php?q=" + username);
-    xmlhttp.send();
-    console.log(xmlhttp.responseText)
-    if(xmlhttp.responseText == 1) {
-        return true
-        //is unique
-    }else{
-        return false
-        //isnt unique
+function usernameMinLength () {
+    let username = document.getElementById("username").value;
+    if (username.length() < 4) {
+        document.getElementById("shortUsername").style.display = "block";
     }
-} */
+    else {
+        document.getElementById("shortUsername").style.display = "none";
+    }
+}
+
+function passwordMinLength () {
+    let password = document.getElementById("password").value;
+    if (password.length() < 4) {
+        document.getElementById("shortPassword").style.display = "block";
+    }
+    else {
+        document.getElementById("shortPassword").style.display = "none";
+    }
+}
 
 function Submit(){
     let form = document.getElementById("signUpForm");

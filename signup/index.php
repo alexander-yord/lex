@@ -15,9 +15,6 @@
 	    if (!mysqli_stmt_prepare($stmt, $sql_account)) {
 	        die(mysqli_error($conn));
 	    }
-	    // if ($u_name==""){
-	    //    die("Empty username");
-	    // }
 	
 	    mysqli_stmt_bind_param($stmt, "ss", $f_name, $l_name);
 	
@@ -36,7 +33,10 @@
 	    mysqli_stmt_execute($stmt2); 
 
         //automatic log in upon sign up
-        $sql = "SELECT lc.account_id, lc.username, ac.first_name, ac.last_name 
+        $sql = "SELECT lc.account_id AS account_id, 
+                       lc.username AS username, 
+                       ac.first_name AS first_name, 
+                       ac.last_name AS last_name 
                 FROM login_credentials lc 
                 LEFT JOIN accounts ac 
                 ON lc.account_id = ac.account_id 
@@ -71,13 +71,18 @@
             <label for = "l_name">Last Name:</label><br>
             <input id = "l_name" type = "text" name = "l_name" required maxlength="12"><br>
             <label for = "username">Username:</label><br>
-            <input id = "username" type = "text" name = "username" onkeyup="checkUnique()" required minlength="4" maxlength = "16"> <br>
+            <input id = "username" type = "text" name = "username" onkeydown="checkUnique()" onkeyup="usernameMinLength ()" required minlength="4" maxlength = "16"> <br>
             <label id = "notUnique" style = "color: red; display: none">
                 This username is taken! <br>
-            </label>                    
+            </label>
+            <label id = "shortUsername" style = "color: red; display: none">
+                Username must be at least 4 characters! <br>
+            </label>                      
             <label for = "password">Password:</label><br>
             <input id = "password" type = "password" name = "password" required minlength="4" maxlength = "16"><br>
-            <label id = "label" style = "display: none">Fill in all the information boxes</label>
+            <label id = "shortPassword" style = "color: red; display: none">
+                Password must be at least 4 characters! <br>
+            </label>  
             <button type = "button" id = "button" onclick = "Submit()">Sign up</button> <br>
             <a href="/login">Already have an account? Log In</a>
         </form>

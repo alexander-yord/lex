@@ -20,9 +20,14 @@
             This is <b>evidently</b> a draft version.
         </p>
         <p>
+            <?php
+               $stringfromfile = file('.git/HEAD', FILE_USE_INCLUDE_PATH);
+               $firstLine = $stringfromfile[0]; //get the string from the array
+               $explodedstring = explode("/", $firstLine, 3); //seperate out by the "/" in the string
+               $branchname = $explodedstring[2]; //get the one that is always the branch name
+            ?>
             Version: TEST.0.1.1 <br>
-	    On SignupEdits Branch <br>
-	    Uncommitted Change
+	        On <?php echo $branchname ?> Branch <br>
         </p>
         <?php if(isset($_SESSION["id"])): ?>
             <a href="logout.php">Log out</a>
