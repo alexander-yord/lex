@@ -21,7 +21,8 @@
         </p>
         <p>
             Version: TEST.0.1.1 <br>
-	    On SignupEdits Branch
+	    On SignupEdits Branch <br>
+	    Uncommitted Change
         </p>
         <?php if(isset($_SESSION["id"])): ?>
             <a href="logout.php">Log out</a>

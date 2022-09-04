@@ -64,7 +64,7 @@
     </head>
     <body>
         <script src="functions.js"></script>
-        <form id = "signUpForm" action = "process-sign-up.php" method="post" class="sign-up">
+        <form id = "signUpForm" method="post" class="sign-up">
             <h2>Sign Up</h2>
             <label for = "f_name">First Name:</label><br>
             <input id = "f_name" type = "text" name = "f_name" required maxlength="12"><br>
