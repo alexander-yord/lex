@@ -20,7 +20,8 @@
             This is <b>evidently</b> a draft version.
         </p>
         <p>
-            Version: TEST.0.1.1
+            Version: TEST.0.1.1 <br>
+	    On SignupEdits Branch
         </p>
         <?php if(isset($_SESSION["id"])): ?>
             <a href="logout.php">Log out</a>
