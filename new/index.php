@@ -1,10 +1,6 @@
 <?php
     include("connectinoInfo.php");
-    if(!isset($_SESSION["id"])){
-        header("Location: ../login");
-        exit;
-    }
-    else {
+    if(isset($_SESSION["id"])){
         $acount_id = $_SESSION["id"];
         $first_name = $_SESSION["first_name"];
         $last_name = $_SESSION["last_name"];
@@ -48,6 +44,10 @@
 	            mysqli_stmt_execute($stmt2);
             }
         }
+    }
+    else{
+        header("Location: ../login");
+        exit;
     }
 ?>
 
