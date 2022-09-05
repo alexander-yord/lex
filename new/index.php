@@ -2,7 +2,7 @@
     include("connectinoInfo.php");
     session_start();
     if(isset($_SESSION["id"])){
-        $acount_id = $_SESSION["id"];
+        $account_id = $_SESSION["id"];
         $first_name = $_SESSION["first_name"];
         $last_name = $_SESSION["last_name"];
         
@@ -14,12 +14,13 @@
                 $sql = "insert into lexes (content, account_id, public_yn) 
 	                values (?, ?, 'Y')";
 	            $stmt = mysqli_stmt_init($conn);
+		    echo "What about here?";
 	            if (!mysqli_stmt_prepare($stmt, $sql)) {
 	                die(mysqli_error($conn));
 	            }
 	            mysqli_stmt_bind_param($stmt, "ss", $content, $account_id);
 	            mysqli_stmt_execute($stmt); 
-
+		    echo "Got so far";
                 //go back to home page
                 header("Location: ../index.php");
             }
