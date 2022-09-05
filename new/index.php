@@ -1,5 +1,6 @@
 <?php
     include("connectinoInfo.php");
+    session_start();
     if(isset($_SESSION["id"])){
         $acount_id = $_SESSION["id"];
         $first_name = $_SESSION["first_name"];
@@ -64,10 +65,10 @@
         <form method="post">
             <h2>Lex It Now!</h2> <br> 
             <label for="content">Your Lex:</label> <br>
-            <textarea maxlength="512" id="content" name="content" maxlength="512" onkeyup="contentCounter()" required></textarea>
+            <textarea maxlength="512" id="content" name="content" maxlength="512" onkeyup="contentCounter()" style="width: 100%; box-sizing: border-box;" required></textarea>
             <div id="contentCounter" style="float: right">0/512</div> <br>
             <label for="url">Add a link (optional):</label> <br>
-            <input type="url" id="url" name="url" style="width: 100%" onkeyup="urlCounter()"> <br>
+            <input type="url" id="url" name="url" style="width: 100%; box-sizing: border-box;" onkeyup="urlCounter()" maxlength="512">
             <div id="urlCounter" style="float: right">0/512</div> <br>
             <button type="submit">Lex It Now</button>
         </form>
