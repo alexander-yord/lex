@@ -20,22 +20,21 @@
             This is <b>evidently</b> a draft version.
         </p>
         <p>
-            <?php
+            <?php //branch info
                $stringfromfile = file('.git/HEAD', FILE_USE_INCLUDE_PATH);
                $firstLine = $stringfromfile[0]; //get the string from the array
                $explodedstring = explode("/", $firstLine, 3); //seperate out by the "/" in the string
                $branchname = $explodedstring[2]; //get the one that is always the branch name
             ?>
-            Version: TEST.0.1.1 <br>
+            Version: TEST.0.2 <br>
 	        On <?php echo $branchname ?> Branch <br>
         </p>
         <?php if(isset($_SESSION["id"])): ?>
-            <a href="logout.php">Log out</a>
+            <a href="logout.php">Log out</a> <br><br>
+            <button onclick="location.href='/new'" type="button">Lex Now!</button>
         <?php else: ?>
             <a href="/login">Log in / Sign up</a> <br>
         <?php endif; ?>
         
-        
     </body>
-    
 </html>
