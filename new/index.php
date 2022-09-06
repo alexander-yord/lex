@@ -1,5 +1,5 @@
 <?php
-    include("connectinoInfo.php");
+    include("connectionInfo.php");
     session_start();
     if(isset($_SESSION["id"])){
         $account_id = $_SESSION["id"];
@@ -14,13 +14,11 @@
                 $sql = "insert into lexes (content, account_id, public_yn) 
 	                values (?, ?, 'Y')";
 	            $stmt = mysqli_stmt_init($conn);
-		    echo "What about here?";
 	            if (!mysqli_stmt_prepare($stmt, $sql)) {
 	                die(mysqli_error($conn));
 	            }
 	            mysqli_stmt_bind_param($stmt, "ss", $content, $account_id);
-	            mysqli_stmt_execute($stmt); 
-		    echo "Got so far";
+	            mysqli_stmt_execute($stmt);
                 //go back to home page
                 header("Location: ../index.php");
             }
@@ -29,7 +27,7 @@
                 $sql_link = "insert into hyperlinks (url) 
 	                values (?)";
 	            $stmt = mysqli_stmt_init($conn);
-	            if (!mysqli_stmt_prepare($stmt, $sql)) {
+	            if (!mysqli_stmt_prepare($stmt, $sql_link)) {
 	                die(mysqli_error($conn));
 	            }
 	            mysqli_stmt_bind_param($stmt, "s", $url);
@@ -39,11 +37,12 @@
                 $sql_content = "INSERT INTO lexes (content, hyperlink, account_id, public_yn)
                 values (?, (SELECT uid FROM hyperlinks WHERE url = ? ORDER BY uid DESC LIMIT 1), ?, 'Y')";
                 $stmt2 = mysqli_stmt_init($conn);
-	            if (!mysqli_stmt_prepare($stmt2, $sql)) {
+	            if (!mysqli_stmt_prepare($stmt2, $sql_content)) {
 	                die(mysqli_error($conn));
 	            }
 	            mysqli_stmt_bind_param($stmt2, "sss", $content, $url, $account_id);
 	            mysqli_stmt_execute($stmt2);
+		    header("Location: ../index.php");
             }
         }
     }
