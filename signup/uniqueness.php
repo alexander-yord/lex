@@ -1,7 +1,9 @@
 <?php
     $q = $_REQUEST["q"];
     
-    include("connectionInfo.php");
+    $path = $_SERVER['DOCUMENT_ROOT'];
+    $path .= "/general/connectionInfo.php";
+    include($path);
     
     $sql = "SELECT username from login_credentials where lower(username) = lower('$q')";
     $result = mysqli_query($conn, $sql);

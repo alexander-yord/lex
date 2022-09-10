@@ -5,7 +5,9 @@
 	$u_username = $_POST["username"];
 	$u_password = $_POST["password"];
     
-    include("connectionInfo.php");
+    $path = $_SERVER['DOCUMENT_ROOT'];
+    $path .= "/general/connectionInfo.php";
+    include($path);
     
     $sql = "SELECT account_id, username, password FROM login_credentials WHERE lower(username) = lower('$u_username')";
     $result = mysqli_query($conn, $sql);

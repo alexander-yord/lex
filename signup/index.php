@@ -5,7 +5,9 @@
 	    $u_name = $_POST["username"];
 	    $u_pass = $_POST["password"];
         
-	    include("connectionInfo.php");
+	    $path = $_SERVER['DOCUMENT_ROOT'];
+        $path .= "/general/connectionInfo.php";
+        include($path);
         
     	$sql_account = "insert into accounts (first_name, last_name) 
 	        values (?, ?)";
