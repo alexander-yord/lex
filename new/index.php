@@ -1,5 +1,7 @@
 <?php
-    include("connectionInfo.php");
+    $path = $_SERVER['DOCUMENT_ROOT'];
+    $path .= "/general/connectionInfo.php";
+    include($path);
     session_start();
     if(isset($_SESSION["id"])){
         $account_id = $_SESSION["id"];
