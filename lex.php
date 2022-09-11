@@ -57,7 +57,7 @@
                     <?php echo $content ?>
                 </p>
                 <?php if(!is_null($url)): ?>
-                    <a href="<?php echo $url?>">Click here to learn more</a>
+                    <a href="<?php echo $url?>" target="_parent">Click here to learn more</a>
                 <?php endif;?>
                 <br>
                 <normalsize style="float: right">
