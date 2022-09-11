@@ -72,9 +72,10 @@
             function copyUrl(){
                 var uid = "<?php echo $uid ?>";
                 var url = "<?php echo $_SERVER['DOCUMENT_ROOT'] ?>";
-                url += "/lex.php?url=" + uid;
-                navigator.clipboard.writeText(url.value);
-                alert("Link copied to clipboard!")
+                url += "/lex.php?url=";
+                url += uid;
+                navigator.clipboard.writeText(url);
+                alert("Link copied to clipboard!");
             }
         </script>
     </body>
