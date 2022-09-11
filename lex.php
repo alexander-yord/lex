@@ -18,7 +18,13 @@
                 $path .= "/general/connectionInfo.php";
                 include($path);
                 $uid = $_GET["uid"];
-                $sql = "SELECT l.content, h.url, lc.username, a.first_name, a.last_name, l.date_cr FROM lexes l
+                $sql = "SELECT l.content AS content, 
+                               h.url AS url, 
+                               lc.username AS username, 
+                               a.first_name AS first_name, 
+                               a.last_name AS last_name, 
+                               l.date_cr AS date_cr
+                        FROM lexes l
                         LEFT JOIN hyperlinks h ON l.hyperlink = h.uid 
                         LEFT JOIN accounts a ON l.account_id = a.account_id
                         LEFT JOIN login_credentials lc ON l.account_id = lc.account_id
@@ -30,11 +36,11 @@
                 if(mysqli_num_rows($result) > 0) {
                     $exists = true;
                     $row = mysqli_fetch_assoc($result);
-                    $author_name = $row["a.first_name"] . " " . $row["a.last_name"];
-                    $author_usrn = $row["lc.username"];
+                    $author_name = $row["first_name"] . " " . $row["last_name"];
+                    $author_usrn = $row["username"];
                     $content = $row["content"];
-                    $url = $row["h.url"];
-                    $date_cr = $row["l.date_cr"];
+                    $url = $row["url"];
+                    $date_cr = $row["date_cr"];
 
                 }
                 else {
