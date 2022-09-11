@@ -57,3 +57,10 @@ button:hover { /* buttons are a different shade of green */
         display: none;
     }
 }
+
+.lex {
+    border: 2px solid;
+    border-color: #76B947;
+    border-radius: 10px;
+    padding: 10px;
+}

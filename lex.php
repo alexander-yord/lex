@@ -52,7 +52,7 @@
             <?php if($exists): ?>
                 <normalsize style="float:left;"><b><?php echo $author_name ?></b>&nbsp &nbsp</normalsize>
                 <a style="float: left; font-size: 16px;">@<?php echo $author_usrn ?></a>
-                <a style="float: right; display: none;" onclick="copyUrl()"> Share</a> <br>
+                <a style="float: right;" onclick="copyUrl()"> Share</a> <br>
                 <p>
                     <?php echo $content ?>
                 </p>
@@ -74,7 +74,7 @@
                 var url = "<?php echo $_SERVER['DOCUMENT_ROOT'] ?>";
                 url += "/lex.php?url=" + uid;
                 navigator.clipboard.writeText(url.value);
-                alert("Link copies to clipboard!")
+                alert("Link copied to clipboard!")
             }
         </script>
     </body>
