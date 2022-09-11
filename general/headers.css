@@ -1,0 +1,59 @@
+.header { /* Container with fixed position */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: none;
+}
+
+.topnav { /* The actual header */
+    overflow: hidden;
+    background-color: #76B947;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.topnav a {/* Navbar buttons */
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover { /* Links - change color on hover */
+    background-color: #94C973;
+    border-radius: 0px 0px 10px 10px;
+    color: white;
+}
+
+a { /* links are green */
+    color: #76B947;
+}
+button { /* buttons are green */
+    background-color: #76B947;
+    color: white;
+}
+button:hover { /* buttons are a different shade of green */
+    background-color: #94C973;
+}
+
+.footer { 
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+@media only screen and (max-width: 1000px) { /* footer hides if screen size is less than 1000px */
+    .footer {
+        display: none;
+    }
+}
