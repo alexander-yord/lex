@@ -38,7 +38,7 @@
                     echo "<h3>The most recent lexes:</h3>";
                     while($row = mysqli_fetch_assoc($result)) {
                         $uid = $row["uid"];
-                        echo "<embed type='text/html' src='lex.php?uid=$uid' style='width:100%;height:auto;'>";
+                        echo "<embed type='text/html' src='lex.php?uid=$uid' style='width:100%;height:30vh;'>";
                     }
                 }
 
