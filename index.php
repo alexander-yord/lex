@@ -14,7 +14,7 @@
         <div class="header">
             <div class="topnav" id="myHeader">
                 <a href="/index.php" style="float: left;">Home</a>
-                <a href="logout.php">My Account</a>
+                <a href="logout.php" style="display: none">My Account</a>
                 <a href="/new">Lex Now!</a>
             </div>
         </div>
@@ -38,7 +38,7 @@
                     echo "<h3>The most recent lexes:</h3>";
                     while($row = mysqli_fetch_assoc($result)) {
                         $uid = $row["uid"];
-                        echo "<embed type='text/html' src='lex.php?uid=$uid' style='width:100%;height:100vh;'>";
+                        echo "<embed type='text/html' src='lex.php?uid=$uid' style='width:100%;height:10vh;'>";
                     }
                 }
 

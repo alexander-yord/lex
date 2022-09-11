@@ -52,9 +52,9 @@
             <?php if($exists): ?>
                 <normalsize style="float:left;"><b><?php echo $author_name ?></b>&nbsp &nbsp</normalsize>
                 <a style="float: left; font-size: 16px;">@<?php echo $author_usrn ?></a>
-                <a style="float: right;" onclick="copyUrl()"> Share</a> <br>
+                <a style="float: right; display: none;" onclick="copyUrl()"> Share</a> <br>
                 <p>
-                    Content goes here
+                    <?php echo $content ?>
                 </p>
                 <?php if(!is_null($url)): ?>
                     <a href="<?php echo $url?>">Click here to learn more</a>
