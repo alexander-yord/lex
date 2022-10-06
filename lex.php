@@ -74,12 +74,13 @@
                 var url = "<?php echo $_SERVER['DOCUMENT_ROOT'] ?>";
                 url += "/lex.php?url=";
                 url += uid;
+                /*
                 const clipboardItem = new ClipboardItem({
                 'text/plain': someAsyncMethod().then((result) => {
                     /**
                      * We have to return an empty string to the clipboard if something bad happens, otherwise the
                      * return type for the ClipBoardItem is incorrect.
-                    */
+                    
                     if (!result) {
                         return new Promise(async (resolve) => {
                         resolve(new Blob[``]())
@@ -92,7 +93,7 @@
                     ),
                 })
                 // Now, we can write to the clipboard in Safari
-                navigator.clipboard.write([clipboardItem])
+                navigator.clipboard.write([clipboardItem]) */
             }
         </script>
     </body>
