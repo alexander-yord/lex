@@ -3,12 +3,11 @@
     top: 0px;
     left: 0px;
     width: 100%;
-    background-color: none;
+    background-color: #76B947;
 }
 
 .topnav { /* The actual header */
     overflow: hidden;
-    background-color: #76B947;
     width: 100%;
     position: relative;
     top: 0px;
@@ -23,14 +22,12 @@
     display: block;
     color: white;
     text-align: center;
-    color: white;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 .topnav a:hover { /* Links - change color on hover */
     background-color: #94C973;
-    border-radius: 0px 0px 10px 10px;
     color: white;
 }
 
