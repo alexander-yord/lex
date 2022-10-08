@@ -63,7 +63,7 @@
         <title>Sign Up</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-        <link rel="stylesheet" href="general/headers.css">
+        <link rel="stylesheet" href="/general/headers.css">
         <meta name="theme-color" content="#76B947"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
