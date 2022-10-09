@@ -7,8 +7,9 @@
 <html>
     <head>
         <title>HOME</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-        <link rel="stylesheet" href="general/headers.css">
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">-->
+        <link rel="stylesheet" href="/general/theme.css">
+        <link rel="stylesheet" href="/general/headers.css">
 
     </head>
     <body>

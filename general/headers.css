@@ -30,16 +30,18 @@
     color: white;
 }
 
-a { /* links are green */
+/*
+a { /* links are green 
     color: #76B947;
 }
-button { /* buttons are green */
+button { /* buttons are green 
     background-color: #76B947;
     color: white;
 }
-button:hover { /* buttons are a different shade of green */
+button:hover { /* buttons are a different shade of green 
     background-color: #94C973;
 }
+*/
 
 .footer { 
     display: block;
