@@ -494,7 +494,7 @@
   }
   
   button {
-    color: #1d1d1d;
+    color: white;
     color: var(--form-text);
     background-color: #efefef;
     background-color: var(--background);

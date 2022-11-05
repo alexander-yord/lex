@@ -24,7 +24,7 @@
                 <a href="logout.php" style="display: none">My Account</a>
                 <a href="/new">Lex Now!</a>
             </div>
-        </div>
+        </div> <br><br>
         <?php
             $path = $_SERVER['DOCUMENT_ROOT']; //account.php?id=
             $path .= "/general/connectionInfo.php";
@@ -53,20 +53,31 @@
 
         <?php if($account_exists):?>
             <h2><?php echo $first_name . " " . $last_name; ?></h2> 
-            <a>@<?php echo $first_name . " " . $last_name; ?></a>
+            <a>@<?php echo $username; ?></a>
             <input type="button" value="Follow" id="follow-unfollow" style="float: right;"/>
             <br><br>
         <?php else: ?>
-        
+            <center>
+                <h2>Sorry, this account does not exist!</h2>
+            </center>
         <?php endif ?>
         
         <script>
             const btn = document.getElementById("follow-unfollow");
             btn.addEventListener("click", ()=>{
-                if(btn.value === "Follow"){
+                if(btn.value === "Follow!"){
                     btn.value = "Unfollow";
+                    btn.style.backgroundColor = "#d0cfcf";
+                    btn.style.color = "#000";
                 }else{
-                    btn.value= "Follow";
+                    if (confirm('Are you sure you want to unfollow this account?')) {
+                        btn.value= "Follow!";
+                        btn.style.backgroundColor = "#76B947";
+                        btn.style.color = "white";
+                    } else {
+                        // Do nothing!
+                        console.log('Thing was not saved to the database.');
+                    }
                 }
             })
         </script>
