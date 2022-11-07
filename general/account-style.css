@@ -37,3 +37,21 @@
     border: 1px solid #ccc;
     border-radius: 0px 25px 20px 20px;
 }
+
+/* Followers and following tab */
+.tabcontent table {
+    width: 100%;
+    background: none;
+}
+
+.tabcontent td:last-child {
+    text-align: right;
+}
+
+.tabcontent tr:nth-child(even) {
+    background: none;
+}
+
+.tabcontent tr:nth-child(odd) {
+    background: none;
+}

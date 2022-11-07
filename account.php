@@ -97,25 +97,67 @@ if (isset($_SESSION["id"]) && $account_exists) {
                           ORDER BY date_cr DESC";
             $result_lexes = mysqli_query($conn, $sql_lexes);
             if (mysqli_num_rows($result_lexes) > 0) {
-                echo "<h3>The most recent lexes:</h3>";
+                echo "<h3>" . $first_name . "'s most recent lexes:</h3>";
                 while ($row = mysqli_fetch_assoc($result_lexes)) {
                     $uid = $row["uid"];
                     echo "<embed type='text/html' src='lex.php?uid=$uid' style='width:100%;height:30vh;'>";
                 }
+            } else {
+                echo "<h3>" . $first_name . " has not lexed yet</h3>";
             }
             ?>
-            <h3>London</h3>
-            <p>London is the capital city of England.</p>
         </div>
 
         <div id="followers" class="tabcontent">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p>
+            <?php
+            $sql_followers = "SELECT f.account_id as account_id, 
+                              a.first_name as first_name, 
+                              a.last_name as last_name, 
+                              c.username as username FROM followers f 
+                              left join accounts a on f.account_id = a.account_id 
+                              left join login_credentials c on f.account_id = c.account_id 
+                              where f.follower_id = $account_id"; //people that this account follows
+            $result_followers = mysqli_query($conn, $sql_followers);
+            if (mysqli_num_rows($result_followers) > 0) {
+                echo "<h3>" . $first_name . "'s followers:</h3>";
+                echo "<table>";
+                while ($row = mysqli_fetch_assoc($result_followers)) {
+                    $f_id = $row["account_id"];
+                    $f_name = $row["first_name"] . " " . $row["last_name"];
+                    $f_username = $row["username"];
+                    echo "<tr><td>$f_name</td><td><a href='/account.php?id=$f_id'>@$f_username</a></td></tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "<h3>" . $first_name . " has no followers yet</h3>";
+            }
+            ?>
         </div>
 
         <div id="following" class="tabcontent">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
+            <?php
+            $sql_followings = "SELECT f.follower_id as account_id, 
+                              a.first_name as first_name, 
+                              a.last_name as last_name, 
+                              c.username as username FROM followers f 
+                              left join accounts a on f.account_id = a.account_id 
+                              left join login_credentials c on f.account_id = c.account_id 
+                              where f.account_id = $account_id"; //people that follow this account 
+            $result_followers = mysqli_query($conn, $sql_followings);
+            if (mysqli_num_rows($result_followings) > 0) {
+                echo "<h3>" . $first_name . " is following:</h3>";
+                echo "<table>";
+                while ($row = mysqli_fetch_assoc($result_followers)) {
+                    $f_id = $row["account_id"];
+                    $f_name = $row["first_name"] . " " . $row["last_name"];
+                    $f_username = $row["username"];
+                    echo "<tr><td>$f_name</td><td><a href='/account.php?id=$f_id'>@$f_username</a></td></tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "<h3>" . $first_name . " is not following other accounts yet</h3>";
+            }
+            ?>
         </div>
 
     <?php else : ?>
