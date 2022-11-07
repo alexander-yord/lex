@@ -109,7 +109,7 @@ if (isset($_SESSION["id"]) && $account_exists) {
         </div>
 
         <div id="followers" class="tabcontent">
-            <?php
+            <!-- ?php
             $sql_followers = "SELECT f.account_id as account_id, 
                               a.first_name as first_name, 
                               a.last_name as last_name, 
@@ -131,11 +131,11 @@ if (isset($_SESSION["id"]) && $account_exists) {
             } else {
                 echo "<h3>" . $first_name . " has no followers yet</h3>";
             }
-            ?>
+            ?> -->
         </div>
 
         <div id="following" class="tabcontent">
-            <?php
+            <!-- ?php
             $sql_followings = "SELECT f.follower_id as account_id, 
                               a.first_name as first_name, 
                               a.last_name as last_name, 
@@ -157,7 +157,7 @@ if (isset($_SESSION["id"]) && $account_exists) {
             } else {
                 echo "<h3>" . $first_name . " is not following other accounts yet</h3>";
             }
-            ?>
+            ?> -->
         </div>
 
     <?php else : ?>
