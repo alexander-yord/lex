@@ -96,7 +96,7 @@ if (isset($_SESSION["id"]) && $account_exists) {
             $sql_lexes = "SELECT uid FROM lexes WHERE public_yn = 'Y' and account_id = '$account_id'
                           ORDER BY date_cr DESC";
             $result_lexes = mysqli_query($conn, $sql_lexes);
-            if (mysqli_num_rows($result) > 0) {
+            if (mysqli_num_rows($result_lexes) > 0) {
                 echo "<h3>The most recent lexes:</h3>";
                 while ($row = mysqli_fetch_assoc($result_lexes)) {
                     $uid = $row["uid"];
