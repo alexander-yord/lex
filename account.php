@@ -45,7 +45,7 @@ if (mysqli_num_rows($result) > 0) { //check if a record for this account_number 
 }
 
 //check if the user is following this account
-$following = false;
+$following = 0;
 if (isset($_SESSION["id"]) && $account_exists) {
     $user_account_id = $_SESSION["id"]; //id of the viewer of the account
     $sql_following = "SELECT uid FROM followers where account_id = '$account_id' 
