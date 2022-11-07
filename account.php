@@ -98,7 +98,7 @@ if (isset($_SESSION["id"]) && $account_exists) {
             $result_lexes = mysqli_query($conn, $sql_lexes);
             if (mysqli_num_rows($result) > 0) {
                 echo "<h3>The most recent lexes:</h3>";
-                while ($row = mysqli_fetch_assoc($result)) {
+                while ($row = mysqli_fetch_assoc($result_lexes)) {
                     $uid = $row["uid"];
                     echo "<embed type='text/html' src='lex.php?uid=$uid' style='width:100%;height:30vh;'>";
                 }
