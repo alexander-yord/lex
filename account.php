@@ -103,7 +103,7 @@ if (isset($_SESSION["id"]) && $account_exists) {
                     echo "<embed type='text/html' src='lex.php?uid=$uid' style='width:100%;height:30vh;'>";
                 }
             } else {
-                echo "<h3>" . $first_name . " has not lexed yet&#1F61E</h3>";
+                echo "<h3>" . $first_name . " has not lexed yet&#x1F61E</h3>";
             }
             ?>
         </div>
@@ -129,13 +129,13 @@ if (isset($_SESSION["id"]) && $account_exists) {
                 }
                 echo "</table>";
             } else {
-                echo "<h3>" . $first_name . " has no followers yet&#1F61E</h3>";
+                echo "<h3>" . $first_name . " has no followers yet&#x1F61E</h3>";
             }
             ?>
         </div>
 
         <div id="following" class="tabcontent">
-            <!-- ?php
+            <?php
             $sql_followings = "SELECT f.follower_id as account_id, 
                               a.first_name as first_name, 
                               a.last_name as last_name, 
@@ -147,7 +147,7 @@ if (isset($_SESSION["id"]) && $account_exists) {
             if (mysqli_num_rows($result_followings) > 0) {
                 echo "<h3>" . $first_name . " is following:</h3>";
                 echo "<table>";
-                while ($row = mysqli_fetch_assoc($result_followers)) {
+                while ($row = mysqli_fetch_assoc($result_followings)) {
                     $f_id = $row["account_id"];
                     $f_name = $row["first_name"] . " " . $row["last_name"];
                     $f_username = $row["username"];
@@ -155,9 +155,9 @@ if (isset($_SESSION["id"]) && $account_exists) {
                 }
                 echo "</table>";
             } else {
-                echo "<h3>" . $first_name . " is not following other accounts yet</h3>";
+                echo "<h3>" . $first_name . " is not following other accounts yet&#x1F61E</h3>";
             }
-            ?> -->
+            ?>
         </div>
 
     <?php else : ?>
