@@ -143,7 +143,7 @@ if (isset($_SESSION["id"]) && $account_exists) {
                               left join accounts a on f.account_id = a.account_id 
                               left join login_credentials c on f.account_id = c.account_id 
                               where f.account_id = $account_id"; //people that follow this account 
-            $result_followers = mysqli_query($conn, $sql_followings);
+            $result_followings = mysqli_query($conn, $sql_followings);
             if (mysqli_num_rows($result_followings) > 0) {
                 echo "<h3>" . $first_name . " is following:</h3>";
                 echo "<table>";
