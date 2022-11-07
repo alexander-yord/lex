@@ -92,7 +92,7 @@ if (isset($_SESSION["id"]) && $account_exists) {
         </div>
 
         <div id="lexes" class="tabcontent">
-            <!--?php
+            <?php
             $sql_lexes = "SELECT uid FROM lexes WHERE public_yn = 'Y' and account_id = '$account_id'
                           ORDER BY date_cr DESC";
             $result_lexes = mysqli_query($conn, $sql_lexes);
@@ -103,7 +103,7 @@ if (isset($_SESSION["id"]) && $account_exists) {
                     echo "<embed type='text/html' src='lex.php?uid=$uid' style='width:100%;height:30vh;'>";
                 }
             }
-            ?> -->
+            ?>
             <h3>London</h3>
             <p>London is the capital city of England.</p>
         </div>
